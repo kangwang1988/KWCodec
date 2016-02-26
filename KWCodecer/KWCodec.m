@@ -1,19 +1,19 @@
 //
-//  KWCodecer.m
-//  KWCodecer
+//  KWCodec.m
+//  KWCodec
 //
 //  Created by KyleWong on 2/24/16.
 //  Copyright © 2016 KyleWong. All rights reserved.
 //
 
-#import "KWCodecer.h"
+#import "KWCodec.h"
 
-@interface KWCodecer()
+@interface KWCodec()
 
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
 @end
 
-@implementation KWCodecer
+@implementation KWCodec
 
 + (instancetype)sharedPlugin
 {
@@ -29,8 +29,14 @@
                                                  selector:@selector(didApplicationFinishLaunchingNotification:)
                                                      name:NSApplicationDidFinishLaunchingNotification
                                                    object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationLog:) name:nil object:nil];
     }
     return self;
+}
+
+- (void)notificationLog:(NSNotification *)notify
+{
+    NSLog(@"%@",notify.name);
 }
 
 - (void)didApplicationFinishLaunchingNotification:(NSNotification*)noti
@@ -40,10 +46,10 @@
     
     // Create menu items, initialize UI, etc.
     // Sample Menu Item:
-    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
+    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Window"];
     if (menuItem) {
         [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-        NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
+        NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"KWCodec" action:@selector(doMenuAction) keyEquivalent:@""];
         //[actionMenuItem setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
         [actionMenuItem setTarget:self];
         [[menuItem submenu] addItem:actionMenuItem];

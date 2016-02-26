@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		296B86521C80C2C600DC3875 /* convert.png in Resources */ = {isa = PBXBuildFile; fileRef = 296B86511C80C2C600DC3875 /* convert.png */; };
+		296B86551C80C49200DC3875 /* NKUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B86541C80C49200DC3875 /* NKUserDefaults.m */; };
+		299C128C1C7DD6E20038795E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299C128B1C7DD6E20038795E /* AppKit.framework */; };
+		299C128E1C7DD6E20038795E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299C128D1C7DD6E20038795E /* Foundation.framework */; };
+		299C12921C7DD6E20038795E /* KWCodec.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 299C12911C7DD6E20038795E /* KWCodec.xcscheme */; };
+		299C12951C7DD6E20038795E /* KWCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 299C12941C7DD6E20038795E /* KWCodec.m */; };
+		299C12981C7DD6E20038795E /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 299C12971C7DD6E20038795E /* NSObject_Extension.m */; };
+		29DE719A1C7EAF5F00D42A90 /* NKCodecWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DE71991C7EAF5F00D42A90 /* NKCodecWindowController.m */; };
+		29DE719C1C7EAFC300D42A90 /* NKCodecWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29DE719B1C7EAFC300D42A90 /* NKCodecWindowController.xib */; };
+		29DE71A01C7F197900D42A90 /* leftarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DE719E1C7F197900D42A90 /* leftarrow.png */; };
+		29DE71A11C7F197900D42A90 /* rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DE719F1C7F197900D42A90 /* rightarrow.png */; };
+		29DE71A41C7F28B000D42A90 /* NKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DE71A31C7F28B000D42A90 /* NKHelper.m */; };
+		29DE71A71C7F7AFD00D42A90 /* NSObject+MethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DE71A61C7F7AFD00D42A90 /* NSObject+MethodSwizzler.m */; };
+		29DE71AA1C7F7B5500D42A90 /* NSObject+CodeInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DE71A91C7F7B5500D42A90 /* NSObject+CodeInjection.m */; };
+		29DE71AE1C7F7DE900D42A90 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DE71AD1C7F7DE900D42A90 /* test.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		296B86511C80C2C600DC3875 /* convert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = convert.png; sourceTree = "<group>"; };
+		296B86531C80C49200DC3875 /* NKUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUserDefaults.h; sourceTree = "<group>"; };
+		296B86541C80C49200DC3875 /* NKUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUserDefaults.m; sourceTree = "<group>"; };
+		299C12881C7DD6E20038795E /* KWCodec.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KWCodec.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		299C128B1C7DD6E20038795E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		299C128D1C7DD6E20038795E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		299C12911C7DD6E20038795E /* KWCodec.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = KWCodec.xcscheme; path = KWCodec.xcodeproj/xcshareddata/xcschemes/KWCodec.xcscheme; sourceTree = SOURCE_ROOT; };
+		299C12931C7DD6E20038795E /* KWCodec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWCodec.h; sourceTree = "<group>"; };
+		299C12941C7DD6E20038795E /* KWCodec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KWCodec.m; sourceTree = "<group>"; };
+		299C12961C7DD6E20038795E /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
+		299C12971C7DD6E20038795E /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
+		299C12991C7DD6E20038795E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29DE71981C7EAF5F00D42A90 /* NKCodecWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKCodecWindowController.h; sourceTree = "<group>"; };
+		29DE71991C7EAF5F00D42A90 /* NKCodecWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKCodecWindowController.m; sourceTree = "<group>"; };
+		29DE719B1C7EAFC300D42A90 /* NKCodecWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NKCodecWindowController.xib; sourceTree = "<group>"; };
+		29DE719E1C7F197900D42A90 /* leftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftarrow.png; sourceTree = "<group>"; };
+		29DE719F1C7F197900D42A90 /* rightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarrow.png; sourceTree = "<group>"; };
+		29DE71A21C7F28B000D42A90 /* NKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKHelper.h; sourceTree = "<group>"; };
+		29DE71A31C7F28B000D42A90 /* NKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKHelper.m; sourceTree = "<group>"; };
+		29DE71A51C7F7AFD00D42A90 /* NSObject+MethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodSwizzler.h"; sourceTree = "<group>"; };
+		29DE71A61C7F7AFD00D42A90 /* NSObject+MethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodSwizzler.m"; sourceTree = "<group>"; };
+		29DE71A81C7F7B5500D42A90 /* NSObject+CodeInjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CodeInjection.h"; sourceTree = "<group>"; };
+		29DE71A91C7F7B5500D42A90 /* NSObject+CodeInjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CodeInjection.m"; sourceTree = "<group>"; };
+		29DE71AD1C7F7DE900D42A90 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		299C12861C7DD6E20038795E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				299C128C1C7DD6E20038795E /* AppKit.framework in Frameworks */,
+				299C128E1C7DD6E20038795E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		299C127F1C7DD6E20038795E = {
+			isa = PBXGroup;
+			children = (
+				299C128F1C7DD6E20038795E /* KWCodec */,
+				299C128A1C7DD6E20038795E /* Frameworks */,
+				299C12891C7DD6E20038795E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		299C12891C7DD6E20038795E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				299C12881C7DD6E20038795E /* KWCodec.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		299C128A1C7DD6E20038795E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				299C128B1C7DD6E20038795E /* AppKit.framework */,
+				299C128D1C7DD6E20038795E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		299C128F1C7DD6E20038795E /* KWCodec */ = {
+			isa = PBXGroup;
+			children = (
+				299C12991C7DD6E20038795E /* Info.plist */,
+				299C12931C7DD6E20038795E /* KWCodec.h */,
+				299C12941C7DD6E20038795E /* KWCodec.m */,
+				29DE71981C7EAF5F00D42A90 /* NKCodecWindowController.h */,
+				29DE71991C7EAF5F00D42A90 /* NKCodecWindowController.m */,
+				29DE719B1C7EAFC300D42A90 /* NKCodecWindowController.xib */,
+				29DE71A21C7F28B000D42A90 /* NKHelper.h */,
+				29DE71A31C7F28B000D42A90 /* NKHelper.m */,
+				299C12961C7DD6E20038795E /* NSObject_Extension.h */,
+				299C12971C7DD6E20038795E /* NSObject_Extension.m */,
+				29DE719D1C7F197900D42A90 /* Resource */,
+				299C12901C7DD6E20038795E /* Supporting Files */,
+				29DE71A51C7F7AFD00D42A90 /* NSObject+MethodSwizzler.h */,
+				29DE71A61C7F7AFD00D42A90 /* NSObject+MethodSwizzler.m */,
+				29DE71A81C7F7B5500D42A90 /* NSObject+CodeInjection.h */,
+				29DE71A91C7F7B5500D42A90 /* NSObject+CodeInjection.m */,
+				296B86531C80C49200DC3875 /* NKUserDefaults.h */,
+				296B86541C80C49200DC3875 /* NKUserDefaults.m */,
+			);
+			path = KWCodec;
+			sourceTree = "<group>";
+		};
+		299C12901C7DD6E20038795E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				299C12911C7DD6E20038795E /* KWCodec.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29DE719D1C7F197900D42A90 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				29DE719E1C7F197900D42A90 /* leftarrow.png */,
+				296B86511C80C2C600DC3875 /* convert.png */,
+				29DE71AD1C7F7DE900D42A90 /* test.png */,
+				29DE719F1C7F197900D42A90 /* rightarrow.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		299C12871C7DD6E20038795E /* KWCodec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 299C129C1C7DD6E20038795E /* Build configuration list for PBXNativeTarget "KWCodec" */;
+			buildPhases = (
+				299C12841C7DD6E20038795E /* Sources */,
+				299C12851C7DD6E20038795E /* Resources */,
+				299C12861C7DD6E20038795E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KWCodec;
+			productName = KWCodec;
+			productReference = 299C12881C7DD6E20038795E /* KWCodec.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		299C12801C7DD6E20038795E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = KyleWong;
+				TargetAttributes = {
+					299C12871C7DD6E20038795E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 299C12831C7DD6E20038795E /* Build configuration list for PBXProject "KWCodec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 299C127F1C7DD6E20038795E;
+			productRefGroup = 299C12891C7DD6E20038795E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				299C12871C7DD6E20038795E /* KWCodec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		299C12851C7DD6E20038795E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				299C12921C7DD6E20038795E /* KWCodec.xcscheme in Resources */,
+				29DE71A01C7F197900D42A90 /* leftarrow.png in Resources */,
+				29DE71A11C7F197900D42A90 /* rightarrow.png in Resources */,
+				296B86521C80C2C600DC3875 /* convert.png in Resources */,
+				29DE719C1C7EAFC300D42A90 /* NKCodecWindowController.xib in Resources */,
+				29DE71AE1C7F7DE900D42A90 /* test.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		299C12841C7DD6E20038795E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				299C12951C7DD6E20038795E /* KWCodec.m in Sources */,
+				299C12981C7DD6E20038795E /* NSObject_Extension.m in Sources */,
+				29DE71AA1C7F7B5500D42A90 /* NSObject+CodeInjection.m in Sources */,
+				29DE71A71C7F7AFD00D42A90 /* NSObject+MethodSwizzler.m in Sources */,
+				29DE71A41C7F28B000D42A90 /* NKHelper.m in Sources */,
+				29DE719A1C7EAF5F00D42A90 /* NKCodecWindowController.m in Sources */,
+				296B86551C80C49200DC3875 /* NKUserDefaults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		299C129A1C7DD6E20038795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		299C129B1C7DD6E20038795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		299C129D1C7DD6E20038795E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = KWCodec/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.virtualvilliage.KWCodec;
+				PRODUCT_NAME = KWCodec;
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		299C129E1C7DD6E20038795E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = KWCodec/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.virtualvilliage.KWCodec;
+				PRODUCT_NAME = KWCodec;
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		299C12831C7DD6E20038795E /* Build configuration list for PBXProject "KWCodec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				299C129A1C7DD6E20038795E /* Debug */,
+				299C129B1C7DD6E20038795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		299C129C1C7DD6E20038795E /* Build configuration list for PBXNativeTarget "KWCodec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				299C129D1C7DD6E20038795E /* Debug */,
+				299C129E1C7DD6E20038795E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 299C12801C7DD6E20038795E /* Project object */;
+}
