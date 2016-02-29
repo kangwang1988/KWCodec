@@ -1,2 +1,0 @@
-# KWCodec
-Xcode plugin.

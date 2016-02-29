@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NKHelperWindowController">
+            <connections>
+                <outlet property="combbCharsetFrom" destination="10a-ky-CpS" id="Gbu-eg-3t5"/>
+                <outlet property="combbCharsetTo" destination="Idh-e5-POw" id="JLx-Mf-RNa"/>
+                <outlet property="textFldAutoCommFrom" destination="HHA-dY-kNy" id="PDy-OZ-VvV"/>
+                <outlet property="textFldAutoCommTo" destination="ARl-Uk-xLm" id="Fvj-7k-DRj"/>
+                <outlet property="textFldFrom" destination="R02-5q-G3v" id="gwu-Mb-OTX"/>
+                <outlet property="textFldTimeDesc" destination="rBs-rc-BFb" id="wqh-he-5gU"/>
+                <outlet property="textFldTimestamp" destination="BBU-8P-p0j" id="qrU-Lo-yhd"/>
+                <outlet property="textFldTo" destination="sZd-bR-za5" id="7iU-OM-xlo"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="yee-7q-BTB"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="KWHelper" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" userLabel="KWHelper" colorLabel="IBBuiltInLabel-Yellow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="441" height="321"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="441" height="321"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box fixedFrame="YES" title="字符集转换" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="RYl-3Y-cx6">
+                        <rect key="frame" x="2" y="222" width="436" height="99"/>
+                        <view key="contentView" id="RmC-xF-SPq">
+                            <rect key="frame" x="1" y="1" width="434" height="83"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10a-ky-CpS">
+                                    <rect key="frame" x="0.0" y="59" width="99" height="26"/>
+                                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="gz7-GN-HdE">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <objectValues>
+                                            <string>Unicode</string>
+                                            <string>UTF8</string>
+                                        </objectValues>
+                                    </comboBoxCell>
+                                </comboBox>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R02-5q-G3v">
+                                    <rect key="frame" x="0.0" y="11" width="191" height="44"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="IB6-M5-8dc">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-e5-POw">
+                                    <rect key="frame" x="230" y="59" width="106" height="26"/>
+                                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="NNb-3C-pLK">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <objectValues>
+                                            <string>Unicode</string>
+                                            <string>UTF8</string>
+                                        </objectValues>
+                                    </comboBoxCell>
+                                </comboBox>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZd-bR-za5">
+                                    <rect key="frame" x="231" y="11" width="197" height="44"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="wtu-rf-hFW">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1KJ-Mi-O7N">
+                                    <rect key="frame" x="210" y="21" width="24" height="24"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="rightarrow" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="W2r-pk-GMZ">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="onCharsetRightConvertAction:" target="-2" id="zJr-2N-SsG"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcK-1j-var">
+                                    <rect key="frame" x="187" y="21" width="24" height="24"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="leftarrow" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="11G-bz-bee">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="onCharsetLeftConvertAction:" target="-2" id="lDk-oz-fzx"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" size="11" name=".PingFangSC-Regular"/>
+                    </box>
+                    <box fixedFrame="YES" title="时间戳转换" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Ncm-Vr-ikN">
+                        <rect key="frame" x="2" y="167" width="436" height="59"/>
+                        <view key="contentView" id="lyI-Rx-c7y">
+                            <rect key="frame" x="1" y="1" width="434" height="43"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBs-rc-BFb">
+                                    <rect key="frame" x="0.0" y="7" width="191" height="34"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="2016/2/25 23:48:43" drawsBackground="YES" id="78r-vf-FXY">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBU-8P-p0j">
+                                    <rect key="frame" x="231" y="7" width="197" height="34"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="1456415323" drawsBackground="YES" id="hAz-UO-KzU">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Up-ko-Kvx">
+                                    <rect key="frame" x="210" y="12" width="24" height="24"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="rightarrow" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="cHZ-bL-rw5">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="onTimeRightConvertAction:" target="-2" id="mvD-Zp-gee"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0m-Sw-Hs3">
+                                    <rect key="frame" x="187" y="12" width="24" height="24"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="leftarrow" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ncy-ql-OkZ">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="onTimeLeftConvertAction:" target="-2" id="TvR-n1-N78"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" size="11" name=".PingFangSC-Regular"/>
+                    </box>
+                    <box fixedFrame="YES" title="自动补全注释" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="gV4-u6-Hvy">
+                        <rect key="frame" x="2" y="82" width="436" height="81"/>
+                        <view key="contentView" id="F67-kG-uTm">
+                            <rect key="frame" x="1" y="1" width="434" height="65"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHA-dY-kNy">
+                                    <rect key="frame" x="0.0" y="29" width="191" height="34"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="/*" drawsBackground="YES" id="7Go-JT-Wmh">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-Zi-YgH">
+                                    <rect key="frame" x="199" y="34" width="24" height="24"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="convert" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="crA-Az-7Jj">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARl-Uk-xLm">
+                                    <rect key="frame" x="231" y="29" width="197" height="34"/>
+                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="/*KyleWong's Comments*/" drawsBackground="YES" id="O75-Mx-MSq">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFy-FT-2YI">
+                                    <rect key="frame" x="372" y="-1" width="66" height="32"/>
+                                    <buttonCell key="cell" type="push" title="应用" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YMG-bf-K4c">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="onAutoCommSaveAction:" target="-2" id="kPU-J7-MFY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" size="11" name=".PingFangSC-Regular"/>
+                    </box>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="260.5" y="242.5"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="convert" width="128" height="128"/>
+        <image name="leftarrow" width="128" height="128"/>
+        <image name="rightarrow" width="128" height="128"/>
+    </resources>
+</document>
