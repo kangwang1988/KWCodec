@@ -91,13 +91,15 @@ NSString *kKeyResCheckResultInfo = @"info";
     NSDocument *ideDocument = [[[NSClassFromString(@"IDEDocumentController") sharedDocumentController] documents] firstObject];
     [self.resCheckBtn setTitle:@"搜索中"];
     [self.resCheckBtn setEnabled:NO];
+    self.resCheckResArray = [@[] mutableCopy];
+    [self.resCheckResTable reloadData];
     dispatch_async(dispatch_get_global_queue(NULL, 0), ^{
         NSArray *array = [self checkResOfWspORPrj:ideDocument.fileURL.path];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self.resCheckBtn setTitle:@""];
+            [self.resCheckBtn setEnabled:YES];
             self.resCheckResArray = [array mutableCopy];
             [self.resCheckResTable reloadData];
-            [self.resCheckBtn setTitle:nil];
-            [self.resCheckBtn setEnabled:YES];
         });
     });
 }
@@ -122,6 +124,7 @@ NSString *kKeyResCheckResultInfo = @"info";
         default:
             break;
     }
+    [dict removeObjectForKey:kKeyResCheckResultName];
     NSString *oriContent = [dict description];
     return [[oriContent stringByReplacingOccurrencesOfString:@"\r" withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
 }
@@ -184,11 +187,28 @@ NSString *kKeyResCheckResultInfo = @"info";
                 NSDictionary *value = [objects objectForKey:key];
                 NSString *path = value[@"path"];
                 if([path hasSuffix:@".png"] || [path hasSuffix:@".jpg"]){
+                    NSString *fileName = [[[path componentsSeparatedByString:@"@"] firstObject] stringByDeletingPathExtension];
+                    NSMutableDictionary *itemInfo = [NSMutableDictionary dictionary];
+                    NSString *format = [NSString stringWithFormat:@"SELF.%@ == '%@'",kKeyResCheckResultPath,path];
+                    NSPredicate *predicate = [NSPredicate predicateWithFormat:format];
+                    NSArray *matchedObjects = [checkResult filteredArrayUsingPredicate:predicate];
+                    if([matchedObjects count]>0){
+                        itemInfo = [@{kKeyResCheckResultName:fileName,kKeyResCheckResultPath:path,kKeyResCheckResultType:@(NKResCheckResultTypeRepeat)} mutableCopy];
+                        [checkResult addObject:itemInfo];
+                        continue;
+                    }
+                    format = [NSString stringWithFormat:@"SELF.%@ == '%@'",kKeyResCheckResultName,fileName];
+                    predicate = [NSPredicate predicateWithFormat:format];
+                    matchedObjects = [checkResult filteredArrayUsingPredicate:predicate];
+                    if([matchedObjects count]>0){
+                        itemInfo = [@{kKeyResCheckResultName:fileName,kKeyResCheckResultPath:path,kKeyResCheckResultType:@([[matchedObjects firstObject][kKeyResCheckResultType] integerValue])} mutableCopy];
+                        [checkResult addObject:itemInfo];
+                        continue;
+                    }
+                    
                     NSPipe *pipe = [NSPipe pipe];
                     NSFileHandle *file = pipe.fileHandleForReading;
-                    
                     NSTask *task = [[NSTask alloc] init];
-                    NSString *fileName = [[[path componentsSeparatedByString:@"@"] firstObject] stringByDeletingPathExtension];
                     task.launchPath = @"/bin/bash";
                     task.arguments = @[@"-c",[NSString stringWithFormat:@"/usr/bin/grep -r --include \\*.m --include \\*.xib -w '%@' %@",fileName,[[aPrjName stringByDeletingLastPathComponent] stringByDeletingLastPathComponent]]];
                     task.standardOutput = pipe;
@@ -198,17 +218,12 @@ NSString *kKeyResCheckResultInfo = @"info";
                     NSData *data = [file readDataToEndOfFile];
                     [file closeFile];
                     NSString *grepOutput = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-                    NSMutableDictionary *itemInfo = [NSMutableDictionary dictionary];
-                    NSString *format = [NSString stringWithFormat:@"SELF.%@ == '%@'",kKeyResCheckResultPath,path];
-                    NSPredicate *predicate = [NSPredicate predicateWithFormat:format];
+                    
                     if(grepOutput.length<=0){
-                        itemInfo = [@{kKeyResCheckResultPath:path,kKeyResCheckResultType:@(NKResCheckResultTypeRedudant)} mutableCopy];
-                    }
-                    else if([[checkResult filteredArrayUsingPredicate:predicate] count]>0){
-                        itemInfo = [@{kKeyResCheckResultPath:path,kKeyResCheckResultType:@(NKResCheckResultTypeRepeat)} mutableCopy];
+                        itemInfo = [@{kKeyResCheckResultName:fileName,kKeyResCheckResultPath:path,kKeyResCheckResultType:@(NKResCheckResultTypeRedudant)} mutableCopy];
                     }
                     else{
-                        itemInfo = [@{kKeyResCheckResultPath:path,kKeyResCheckResultType:@(NKResCheckResultTypeOK)} mutableCopy];
+                        itemInfo = [@{kKeyResCheckResultName:fileName,kKeyResCheckResultPath:path,kKeyResCheckResultType:@(NKResCheckResultTypeOK)} mutableCopy];
                     }
                     [checkResult addObject:itemInfo];
                 }
