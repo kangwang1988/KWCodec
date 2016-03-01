@@ -98,7 +98,8 @@
             [textView setString:toContent];
         }
     }
-    if([notify.name isEqualToString:@"IDEEditorDocumentDidChangeNotification"] || [notify.name isEqualToString:@"IDEEditorDocumentShouldCommitEditingNotification"]){
+//    NSLog(@"[KWLM] notification received with name:%@,object:%@",notify.name,notify.object);
+    if([notify.name isEqualToString:@"IDEEditorDocumentDidChangeNotification"] || [notify.name isEqualToString:@"IDEEditorDocumentShouldCommitEditingNotification"] || [notify.name isEqualToString:@"NSViewFrameDidChangeNotification"]){
         [self updateUIComponents];
     }
     if([self.notifs containsObject:notify.name])
@@ -110,7 +111,8 @@
 // Sample Action, for menu item:
 - (void)doShowMainWindow:(id)sender
 {
-    self.helperVC = [[NKHelperWindowController alloc] initWithWindowNibName:@"NKHelperWindowController"];
+    if(!self.helperVC)
+        self.helperVC = [[NKHelperWindowController alloc] initWithWindowNibName:@"NKHelperWindowController"];
     [self.helperVC showWindow:self.helperVC];
 }
 
@@ -120,7 +122,10 @@
         return;
     }
     [self sendCombinedKeysForCloseCurDoc];
-    [self performSelector:@selector(doCloseAllDocs:) withObject:nil afterDelay:.35f];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self doCloseAllDocs:nil];
+    });
+    //[self performSelector:@selector(doCloseAllDocs:) withObject:nil afterDelay:.35f];
 }
 
 #pragma mark - Update UIComponents
@@ -128,7 +133,10 @@
     NSDocumentController* curIDEDC = [NSClassFromString(@"IDEDocumentController") sharedDocumentController];
     NSArray *openedDocs = curIDEDC.documents;
     BOOL isEnabled = YES;
-    if(openedDocs.count<=0 || (openedDocs.count == 1 && [[[openedDocs.firstObject fileURL] absoluteString] hasSuffix:@".xcworkspace/"])){
+    NSString *fileUrl = [[openedDocs.firstObject fileURL] absoluteString];
+    if(openedDocs.count<=0 || (openedDocs.count == 1 &&
+         [fileUrl hasSuffix:@".xcworkspace/"])
+       ){
         [NSObject cancelPreviousPerformRequestsWithTarget:self];
         isEnabled = NO;
     }
